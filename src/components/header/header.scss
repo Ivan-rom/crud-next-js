@@ -1,0 +1,32 @@
+@import '@/styles/variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+
+  &__entries {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__input {
+    input {
+      padding: 9px 8px 9px 33px;
+    }
+  }
+}

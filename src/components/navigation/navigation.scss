@@ -1,0 +1,37 @@
+@import '@/styles/variables';
+
+.navigation {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  &__text {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__element {
+    border-radius: 8px;
+    background-color: #141432;
+    transition: 0.2s;
+    &-active {
+      background-color: #624de3;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 10px $accent-color;
+    }
+  }
+
+  &__button {
+    width: 31px;
+    height: 31px;
+    padding: 8px 9px;
+  }
+}

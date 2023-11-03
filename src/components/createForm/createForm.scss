@@ -1,0 +1,59 @@
+@import '@/styles/variables';
+
+.create__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 14px;
+
+    input,
+    select {
+      width: 200px;
+      &[type='number'] {
+        padding-left: 20px;
+      }
+    }
+
+    option {
+      &[value='delivered'] {
+        color: #1f9254;
+      }
+      &[value='process'] {
+        color: #cd6200;
+      }
+      &[value='canceled'] {
+        color: #a30d11;
+      }
+    }
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &__wrapper {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .input__wrapper {
+      // display: none;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+}
