@@ -61,9 +61,6 @@ const CrudPage = () => {
   }
 
   function addProduct(newProduct: IProduct) {
-    console.log(newProduct)
-    data.push(newProduct)
-
     setProducts([...products, newProduct])
     setIsModalOpen(false)
   }
