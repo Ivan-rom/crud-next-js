@@ -1,21 +1,5 @@
 @import '@/styles/variables';
 
-.products {
-  font-size: 14px;
-
-  &__row {
-    display: flex;
-    gap: 16px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-
-    > * {
-      flex-basis: 120px;
-    }
-  }
-}
-
 .head {
   font-weight: 700;
   button {

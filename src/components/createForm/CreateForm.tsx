@@ -1,12 +1,71 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-import './createForm.scss'
 import { IProduct } from '@/interfaces/product.interface'
 import Image from 'next/image'
+import styled from 'styled-components'
 
 type Props = {
   product?: IProduct | null
   addProduct: (newProduct: IProduct) => void
 }
+
+const StyledCreateForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  & h2 {
+    margin-bottom: 8px;
+  }
+
+  & label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 14px;
+
+    & input,
+    & select {
+      width: 200px;
+      &[type='number'] {
+        padding-left: 20px;
+      }
+    }
+
+    & option {
+      &[value='delivered'] {
+        color: #1f9254;
+      }
+      &[value='process'] {
+        color: #cd6200;
+      }
+      &[value='canceled'] {
+        color: #a30d11;
+      }
+    }
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &__wrapper {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .input__wrapper {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+`
 
 const CreateForm = ({ product, addProduct }: Props) => {
   const [customer, setCustomer] = useState(product ? product.customer : '')
@@ -42,7 +101,7 @@ const CreateForm = ({ product, addProduct }: Props) => {
   }
 
   return (
-    <form className="create__form" onSubmit={submitHandler}>
+    <StyledCreateForm onSubmit={submitHandler}>
       {product ? <h2>Edit #{product.id}</h2> : <h2>Create new product</h2>}
 
       <label>
@@ -156,7 +215,7 @@ const CreateForm = ({ product, addProduct }: Props) => {
       )}
 
       <button className="button-accent">Submit</button>
-    </form>
+    </StyledCreateForm>
   )
 }
 
